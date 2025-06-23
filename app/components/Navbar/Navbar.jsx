@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const VaultNavbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,28 +16,35 @@ const VaultNavbar = () => {
                     {/* Logo */}
                     <div className="flex-shrink-0">
                         <a href="#" className="text-2xl font-bold text-blue-400 hover:text-black transition-colors duration-300">
-                            <img src="/VAULT.png" alt="" className='w-20 h-auto'/>
+                            <img src="/VAULT.png" alt="" className='w-20 h-auto' />
                         </a>
                     </div>
 
                     {/* Desktop Menu - Centered */}
                     <div className="hidden xl:flex flex-1 justify-center">
                         <div className="flex items-baseline space-x-2 2xl:space-x-4">
-                            <a href="#" className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-300">
-                                HOME
-                            </a>
-                            <a href="#" className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-300">
-                                ABOUT US
-                            </a>
-                            <a href="#" className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-300">
-                                NEWS
-                            </a>
+                            <Link href="/" >
+                                <span className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-300">
+                                    HOME
+                                </span>
+                            </Link>
+
+                            <Link href="/about" >
+                                <span className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-300">
+                                    ABOUT US
+                                </span>
+                            </Link>
+                            <Link href="/news" >
+                                <span className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-300">
+                                    NEWS
+                                </span>
+                            </Link>
 
                             {/* Products Dropdown */}
                             <div className="relative group">
-                                <a href="#" className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-300">
+                                <Link href="#" className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-300">
                                     PRODUCTS
-                                </a>
+                                </Link>
                                 <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
                                     <div className="p-6">
                                         <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center border-b border-blue-400 pb-2">
@@ -62,18 +70,20 @@ const VaultNavbar = () => {
                                 </div>
                             </div>
 
-                            <a href="#" className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-300">
-                                CLIENTS
-                            </a>
+                            <Link href="/clients" >
+                                <span className='text-black hover:text-blue-400 px-2 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-300"'>
+                                    CLIENTS
+                                </span>
+                            </Link>
 
                             {/* Technology Dropdown */}
                             <div className="relative group">
-                                <a
+                                <Link
                                     href="#"
                                     className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-sm font-medium uppercase tracking-wide transition-colors duration-300"
                                 >
                                     TECHNOLOGY
-                                </a>
+                                </Link>
                                 <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl lg:max-w-5xl xl:max-w-6xl h-auto max-h-[30rem] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200 overflow-y-auto">
                                     <div className="p-6">
                                         <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center border-b border-blue-400 pb-2">
@@ -144,12 +154,12 @@ const VaultNavbar = () => {
 
                             {/* Services Dropdown */}
                             <div className="relative group">
-                                <a
+                                <Link
                                     href="#"
                                     className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-xs lg:text-sm font-medium uppercase tracking-wide transition-colors duration-300"
                                 >
                                     SERVICES
-                                </a>
+                                </Link>
                                 <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl lg:max-w-5xl xl:max-w-6xl h-auto max-h-[30rem] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200 overflow-y-auto">
                                     <div className="p-6">
                                         <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center border-b border-blue-400 pb-2">
@@ -205,19 +215,26 @@ const VaultNavbar = () => {
                                 </div>
                             </div>
 
-                            <a href="#" className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-xs lg:text-sm font-medium uppercase tracking-wide transition-colors duration-300">
-                                CAREERS
-                            </a>
-                            <a href="#" className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-xs lg:text-sm font-medium uppercase tracking-wide transition-colors duration-300">
-                                CONTACT 
-                            </a>
-                            <a href="#" className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-xs lg:text-sm font-medium uppercase tracking-wide transition-colors duration-300">
-                                BLOGS
-                            </a>
+                            <Link href="/career" >
+                                <span className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-xs lg:text-sm font-medium uppercase tracking-wide transition-colors duration-300">
+                                    CAREER
+                                </span>
+                            </Link>
+                            <Link href="/contact" >
+                                <span className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-xs lg:text-sm font-medium uppercase tracking-wide transition-colors duration-300">
+                                    CONTACT
+                                </span>
+                            </Link>
+                            <Link href="/blogs">
+                                <span className="text-black hover:text-blue-400 px-2 py-2 rounded-md text-xs lg:text-sm font-medium uppercase tracking-wide transition-colors duration-300">
+                                    BLOGS
+                                </span>
+                            </Link>
+
                         </div>
                     </div>
 
-                    {/* Mobile menu button - Changed from xl to lg */}
+
                     <div className="lg:hidden">
                         <button
                             onClick={toggleMobileMenu}
