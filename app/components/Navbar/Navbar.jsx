@@ -9,6 +9,11 @@ const VaultNavbar = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
+    // Close mobile menu when a link is clicked
+    const closeMobileMenu = () => {
+        setIsMobileMenuOpen(false);
+    };
+
     return (
         <nav className="bg-white shadow-lg relative z-50">
             <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -261,19 +266,39 @@ const VaultNavbar = () => {
                 </div>
             </div>
 
-            {/* Mobile menu - Changed from xl to lg */}
+            
             <div className={`lg:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800">
-                    <a href="#" className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">HOME</a>
-                    <a href="#" className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">ABOUT US</a>
-                    <a href="#" className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">NEWS</a>
-                    <a href="#" className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">PRODUCTS</a>
-                    <a href="#" className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">CLIENTS</a>
-                    <a href="#" className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">TECHNOLOGY</a>
-                    <a href="#" className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">SERVICES</a>
-                    <a href="#" className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">CAREERS</a>
-                    <a href="#" className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">CONTACT US</a>
-                    <a href="#" className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">BLOGS</a>
+                    <Link href="/" onClick={closeMobileMenu} className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">
+                        HOME
+                    </Link>
+                    <Link href="/about" onClick={closeMobileMenu} className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">
+                        ABOUT US
+                    </Link>
+                    <Link href="/news" onClick={closeMobileMenu} className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">
+                        NEWS
+                    </Link>
+                    <Link href="#" onClick={closeMobileMenu} className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">
+                        PRODUCTS
+                    </Link>
+                    <Link href="/clients" onClick={closeMobileMenu} className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">
+                        CLIENTS
+                    </Link>
+                    <Link href="#" onClick={closeMobileMenu} className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">
+                        TECHNOLOGY
+                    </Link>
+                    <Link href="#" onClick={closeMobileMenu} className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">
+                        SERVICES
+                    </Link>
+                    <Link href="/career" onClick={closeMobileMenu} className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">
+                        CAREERS
+                    </Link>
+                    <Link href="/contact" onClick={closeMobileMenu} className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">
+                        CONTACT US
+                    </Link>
+                    <Link href="/blogs" onClick={closeMobileMenu} className="text-white hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium uppercase">
+                        BLOGS
+                    </Link>
                 </div>
             </div>
         </nav>
