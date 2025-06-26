@@ -6,79 +6,79 @@ import { useState } from 'react';
 const clients = [
   {
     id: 1,
-    name: 'Techasoft Pvt. Ltd.',
-    description: 'Leading digital solutions provider across India and abroad with expertise in web development, mobile apps, and cloud solutions.',
-    logo: 'https://www.techasoft.com/uploads/1627303136894.png',
-    industry: 'Technology',
-    location: 'Mumbai, India',
+    name: 'Flutterwave',
+    description: 'Leading African fintech company providing payment infrastructure for global merchants and payment service providers.',
+    logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=600&q=80',
+    industry: 'Fintech',
+    location: 'Lagos, Nigeria',
     partnership: '2019',
-    services: ['Web Development', 'Mobile Apps', 'Cloud Solutions'],
-    testimonial: 'Outstanding technical expertise and professional delivery. They transformed our digital presence completely.',
+    services: ['Payment Processing', 'API Integration', 'Mobile Solutions'],
+    testimonial: 'Vault delivered exceptional technical expertise and transformed our payment infrastructure completely.',
     rating: 5,
   },
   {
     id: 2,
-    name: 'Ekart Logistics',
-    description: 'India\'s largest logistics and supply chain company, revolutionizing e-commerce delivery and last-mile connectivity.',
-    logo: 'https://www.techasoft.com/uploads/ekart_logo.png',
-    industry: 'Logistics',
-    location: 'Bangalore, India',
+    name: 'Jumia Technologies',
+    description: 'Africa\'s leading e-commerce platform, revolutionizing online shopping and logistics across the continent.',
+    logo: 'https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=600&q=80',
+    industry: 'E-commerce',
+    location: 'Lagos, Nigeria',
     partnership: '2020',
-    services: ['Supply Chain Management', 'Tracking Systems', 'Mobile Solutions'],
-    testimonial: 'Their innovative approach to logistics technology has streamlined our operations significantly.',
+    services: ['E-commerce Platform', 'Logistics Solutions', 'Mobile Apps'],
+    testimonial: 'Vault\'s innovative approach to e-commerce technology has streamlined our operations significantly.',
     rating: 5,
   },
   {
     id: 3,
-    name: 'Zenith Mobile Bank',
-    description: 'Revolutionizing mobile banking with secure digital platforms, offering seamless financial services to millions of customers.',
-    logo: 'https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=600&q=80',
-    industry: 'Fintech',
-    location: 'Delhi, India',
+    name: 'Access Bank',
+    description: 'Leading Nigerian bank providing comprehensive financial services with cutting-edge digital banking solutions.',
+    logo: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?auto=format&fit=crop&w=600&q=80',
+    industry: 'Banking',
+    location: 'Lagos, Nigeria',
     partnership: '2021',
-    services: ['Mobile Banking', 'Security Solutions', 'API Integration'],
-    testimonial: 'Exceptional security focus and user experience design. Our customers love the new platform.',
+    services: ['Digital Banking', 'Security Solutions', 'Mobile Banking'],
+    testimonial: 'Exceptional security focus and user experience design. Our customers love the new digital platform.',
     rating: 5,
   },
   {
     id: 4,
-    name: 'GreenTech Solutions',
-    description: 'Sustainable technology company focused on renewable energy solutions and environmental monitoring systems.',
+    name: 'Nigerian National Petroleum Corporation',
+    description: 'Nigeria\'s national oil company focused on petroleum exploration, production, and sustainable energy solutions.',
     logo: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=600&q=80',
-    industry: 'Green Technology',
-    location: 'Chennai, India',
+    industry: 'Energy',
+    location: 'Abuja, Nigeria',
     partnership: '2022',
-    services: ['IoT Solutions', 'Data Analytics', 'Environmental Monitoring'],
-    testimonial: 'Their expertise in IoT and data analytics has revolutionized our environmental monitoring capabilities.',
+    services: ['IoT Solutions', 'Data Analytics', 'Process Automation'],
+    testimonial: 'Vault\'s expertise in IoT and data analytics has revolutionized our operational monitoring capabilities.',
     rating: 4,
   },
   {
     id: 5,
-    name: 'HealthCare Plus',
-    description: 'Digital healthcare platform providing telemedicine services and health management tools for modern healthcare needs.',
+    name: 'Lifeshelve Healthcare',
+    description: 'Digital healthcare platform providing telemedicine services and health management tools across Nigeria.',
     logo: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=600&q=80',
     industry: 'Healthcare',
-    location: 'Hyderabad, India',
+    location: 'Lagos, Nigeria',
     partnership: '2023',
     services: ['Telemedicine', 'Health Analytics', 'Patient Management'],
-    testimonial: 'Professional team with deep understanding of healthcare technology requirements.',
+    testimonial: 'Professional team with deep understanding of Nigerian healthcare technology requirements.',
     rating: 5,
   },
   {
     id: 6,
-    name: 'EduTech Innovations',
-    description: 'Educational technology company creating interactive learning platforms and digital classroom solutions for modern education.',
+    name: 'uLesson Education',
+    description: 'Leading EdTech company creating interactive learning platforms and digital classroom solutions for African students.',
     logo: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80',
     industry: 'Education',
-    location: 'Pune, India',
+    location: 'Lagos, Nigeria',
     partnership: '2023',
     services: ['E-Learning Platforms', 'Educational Apps', 'LMS Development'],
-    testimonial: 'They delivered an exceptional learning management system that exceeded our expectations.',
+    testimonial: 'Vault delivered an exceptional learning management system that exceeded our expectations.',
     rating: 4,
   },
 ];
 
-const industries = ['All', 'Technology', 'Logistics', 'Fintech', 'Green Technology', 'Healthcare', 'Education'];
+const industries = ['All', 'Fintech', 'E-commerce', 'Banking', 'Energy', 'Healthcare', 'Education'];
 
 export default function ClientsPage() {
   const [selectedIndustry, setSelectedIndustry] = useState('All');
@@ -100,46 +100,43 @@ export default function ClientsPage() {
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 text-gray-900">
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-700 text-white">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-8 py-20">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2 space-y-6">
-              <h1 className="text-6xl font-bold leading-tight">
-                Our <span className="text-yellow-300">Trusted</span> Clients
-              </h1>
-              <p className="text-xl text-blue-100 leading-relaxed">
-                We're proud to partner with innovative companies across diverse industries, 
-                helping them achieve digital transformation and sustainable growth through cutting-edge technology solutions.
-              </p>
-              <div className="flex flex-wrap gap-4 mt-8">
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
-                  <span className="text-2xl font-bold">50+</span>
-                  <p className="text-sm">Happy Clients</p>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
-                  <span className="text-2xl font-bold">100+</span>
-                  <p className="text-sm">Projects Delivered</p>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
-                  <span className="text-2xl font-bold">6</span>
-                  <p className="text-sm">Industries Served</p>
-                </div>
+      <section className="max-w-7xl mx-auto px-8 py-20">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="lg:w-1/2 space-y-6">
+            <h1 className="text-5xl font-bold leading-tight text-gray-900">
+              Our <span className="text-blue-600 mb-5">Trusted</span> Clients
+            </h1>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              We're proud to partner with innovative companies across diverse industries, 
+              helping them achieve digital transformation and sustainable growth through cutting-edge technology solutions.
+            </p>
+            {/* <div className="flex flex-wrap gap-4 mt-8">
+              <div className="bg-white shadow-lg rounded-lg px-6 py-3 border border-gray-200">
+                <span className="text-2xl font-bold text-blue-600">50+</span>
+                <p className="text-sm text-gray-600">Happy Clients</p>
               </div>
-            </div>
+              <div className="bg-white shadow-lg rounded-lg px-6 py-3 border border-gray-200">
+                <span className="text-2xl font-bold text-blue-600">100+</span>
+                <p className="text-sm text-gray-600">Projects Delivered</p>
+              </div>
+              <div className="bg-white shadow-lg rounded-lg px-6 py-3 border border-gray-200">
+                <span className="text-2xl font-bold text-blue-600">6</span>
+                <p className="text-sm text-gray-600">Industries Served</p>
+              </div>
+            </div> */}
+          </div>
 
-            <div className="lg:w-1/2 flex justify-center">
-              <div className="relative">
-                <Image
-                  src="https://www.techasoft.com/debug/img/banner_icon.png"
-                  alt="Client collaboration"
-                  width={500}
-                  height={600}
-                  className="rounded-2xl shadow-2xl object-contain transform hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute -bottom-4 -right-4 bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold shadow-lg">
-                  Since 2019
-                </div>
+          <div className="lg:w-1/2 flex justify-center">
+            <div className="relative">
+              <Image
+                src="https://www.techasoft.com/debug/img/banner_icon.png"
+                alt="Client collaboration"
+                width={500}
+                height={600}
+                className="rounded-2xl shadow-2xl object-contain transform hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-full font-semibold shadow-lg">
+                Since 2019
               </div>
             </div>
           </div>
